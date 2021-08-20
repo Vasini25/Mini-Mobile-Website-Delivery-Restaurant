@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Food Box</title>
+
+    <style>
+      /*Style sheet*/
+      body {
+        background-color: lightgray;
+      }
+
+      p {
+        margin-left: 8px;
+      }
+
+      .app-header {
+        background-color: red;
+        border-radius: 10px;
+        color: white;
+        padding: 2px;
+      }
+
+      h1 {
+        margin: 2%;
+      }
+
+      h2 {
+        margin: 2%;
+      }
+
+      h3 {
+        font-size: 25px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        margin: 2%;
+      }
+
+      .app-product {
+        background: white;
+        border-radius: 10px;
+        padding: 2px;
+        margin-bottom: 5px;
+        border: 5px solid white;
+        cursor: pointer;
+      }
+
+      img {
+        width: 100px;
+        border-radius: 10px;
+        float: right;
+      }
+
+      .Botao {
+        border-radius: 30px;
+        background: green;
+        color: white;
+        padding: 10px;
+        margin-top: 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="app-header">
+      <h1>Food Box</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+
+    <div>
+      <h3>Primeiro, seu lanche:</h3>
+    </div>
+
+    <div class="app-product" onclick="Especial()" id="Esp">
+      <img
+        src="https://www.unileverfoodsolutions.pt/dam/global-ufs/mcos/portugal/calcmenu/recipes/PT-recipes/In-Development/hamb%C3%BArguer-cl%C3%A1ssico/main-header.jpg"
+        alt="Hambúrguer de carne com alface, tomate, cebola e picles no pão italiano."
+      />
+      <h4>
+        Especial da Casa
+      </h4>
+      <p>
+        Especialidade da casa com 300g de carne no pão italiano com alface,
+        tomate, cebola roxa e picles
+      </p>
+      <p><strong> 31,90 </strong></p>
+    </div>
+
+    <div class="app-product" onclick="CowSaver()" id="CS">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk_bhYgYZz4wGU1OtkaJ9Hhk1uZjgeCV1nxQ&usqp=CAU"
+        alt="Hambúrguer de carne de soja com alface, tomate e queijo no pão italiano."
+      />
+      <h4>
+        Cow Saver
+      </h4>
+      <p>
+        Opção vegetariana com 180g de carne de soja no pão italiano com alface,
+        tomate e queijo prato.
+      </p>
+      <p><strong> 37,90 </strong></p>
+    </div>
+
+    <div>
+      <h3>Agora, sua bebida:</h3>
+    </div>
+
+    <div class="app-product" onclick="Suco()" id="Suco">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYS3D7svhTKgJmqyeamgER-bYS0d9qLKfIlA&usqp=CAU"
+        alt="Copo grande de vidro cheio de suco de laranja."
+      />
+      <h4>
+        Suco Natural
+      </h4>
+      <p>
+        Suco natural de laranja colhida do pé por nós mesmos!
+      </p>
+      <p><strong> 6,90 </strong></p>
+    </div>
+
+    <div class="app-product" onclick="Agua()" id="Agua">
+      <img
+        src="http://farmaciaindiana.vteximg.com.br/arquivos/ids/206727/7896371000045_0.jpg?v=636748773745400000"
+        alt="Garrafa de 500ml de água mineral."
+      />
+      <h4>
+        Água mineral
+      </h4>
+      <p>
+        Garrafa d´agua 500ml
+      </p>
+      <p><strong> 2,90 </strong></p>
+    </div>
+
+    <div>
+      <h3>Por fim, sua sobremesa:</h3>
+    </div>
+
+    <div class="app-product" onclick="BS()" id="BS">
+      <img
+        src="https://www.receitasdemae.com.br/wp-content/uploads/2012/05/banana-split.jpg"
+        alt="3 bolas de sorvete cobertas por chantili e sereja entre duas bananas numa vasilha de cristal"
+      />
+      <h4>
+        Banana Split
+      </h4>
+      <p>
+        Três (3) bolas de sorvete de sabor napolitano com chantili, cereja e
+        duas (2) bananas para acompanhar!
+      </p>
+      <p><strong> 14,90 </strong></p>
+    </div>
+
+    <div class="app-product" onclick="SF()" id="SF">
+      <img
+        src="https://media.istockphoto.com/photos/fruit-salad-in-plastic-cup-picture-id498306942"
+        alt="Copo de plástico cheio de salada de frutas, com frutas em pedacinhos"
+      />
+      <h4>
+        Salada de frutas
+      </h4>
+      <p>
+        Um grande copo de frutas picadas para você que está tentando comer de
+        forma mais sudável!
+      </p>
+      <p><strong> 9,90 </strong></p>
+    </div>
+
+    <div class="Botao" onclick="End()" id="FP">
+      <h4>Finalizar Pedido</h4>
+    </div>
+  </body>
+
+  <script>
+    let prato;
+    let bebida;
+    let sobremesa;
+
+    function Especial() {
+      document.getElementById("Esp").style.borderColor = "green";
+      document.getElementById("CS").style.borderColor = "white";
+      prato = "Especial da Casa";
+    }
+
+    function CowSaver() {
+      document.getElementById("CS").style.borderColor = "green";
+      document.getElementById("Esp").style.borderColor = "white";
+      prato = "Cow Saver";
+    }
+
+    function Suco() {
+      document.getElementById("Suco").style.borderColor = "green";
+      document.getElementById("Agua").style.borderColor = "white";
+      bebida = "suco";
+    }
+
+    function Agua() {
+      document.getElementById("Agua").style.borderColor = "green";
+      document.getElementById("Suco").style.borderColor = "white";
+      bebida = "água";
+    }
+
+    function BS() {
+      document.getElementById("BS").style.borderColor = "green";
+      document.getElementById("SF").style.borderColor = "white";
+      sobremesa = "banan split";
+    }
+
+    function SF() {
+      document.getElementById("SF").style.borderColor = "green";
+      document.getElementById("BS").style.borderColor = "white";
+      sobremesa = "salada de frutas";
+    }
+
+    function End() {
+      let mensagem =
+        "Olá, gostaria de pedir um " +
+        prato +
+        " com " +
+        bebida +
+        " e " +
+        sobremesa +
+        " de sobremesa!";
+
+      mensagem = "https://wa.me/+5521999999999?text=" + mensagem;
+
+      //window.open("https://wa.me/+5521999999999?text=" + mensagem)
+      window.open(mensagem);
+    }
+  </script>
+</html>
